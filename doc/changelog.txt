@@ -1,0 +1,24 @@
+2016/04/28 - Bug fixed when performing Normalization when there is only one dataset. (divided an integer with a float)
+2016/04/28 - Added functionality to perform stth offsets using post-processing
+2016/04/28 - Bug fixed - Did not check the masking parameters correctly to add to the 'mod' string
+2016/05/04 - Bug fixed - Stth Offset mod string caused errors in exporting ASCII data. Changed the mod string format
+2016/05/04 - 3D graphs - automated scaling for multi-3d graphs using one axis set
+2016/05/10 - Bug fixed - ExcelGUI output: change maximum value for dataset range selection from 99 to 99999
+2016/05/13 - Enable reading multiple *.xyz datasets in one file with Mayavi (datasets separated by whitespace line)
+2016/05/17 - Change the stth offset to shift the data in the negative direction of what was entered in te text box [offset = -1.0*float(shift)]
+2016/05/18 - MayaVi window: add SaveAs to context menu. Remove the 'flat waterfall' image immediately after MayaVi visualization is added the first time.
+2016/05/26 - Export generic fitted API to EXCEL
+2016/05/30 - Added functionality to extract 2D detector data line-by-line (horizontal or vertical) to create new datasets
+2016/05/31 - When opening two-column ASCII: Any label other than the known ones (Channel, Position, Angle, d-spacing, etc) will be added to the linear (Position) axis 
+2016/06/02 - Add z-wall scan
+2016/06/07 - Improvements in transmission wall scan: added ranges where gauge volume is larger than wall thickness
+2018/07/18 - Add 2D attenuation calculation module & minor big fixes
+2019/03/25 - Add export diffraction patterns to GSAS
+2019/04/01 - Various changes to move from Python 2.7 to Python 3.7:
+		renamed the folder 3rd-party to thirdparty
+		place the file matplotlibwidget.py in the folder thirdparty 
+		in ScanmanGUI.py change the import of matplotlibwidget to thirdparty.matplotlibwidget
+		mylib.py: cStringIO no longer exists, can get StringIO now from os
+		modify all print commands
+		modify all sort commands on iterators (to sorted)
+		

@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>FitCommon</class>
+ <widget class="QGroupBox" name="FitCommon">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>400</width>
+    <height>430</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>FitCommon</string>
+  </property>
+  <property name="title">
+   <string/>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout_2">
+     <property name="topMargin">
+      <number>0</number>
+     </property>
+     <item>
+      <widget class="QTableWidget" name="range_tbl">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="MinimumExpanding">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="selectionMode">
+        <enum>QAbstractItemView::ExtendedSelection</enum>
+       </property>
+       <attribute name="horizontalHeaderDefaultSectionSize">
+        <number>80</number>
+       </attribute>
+       <attribute name="horizontalHeaderMinimumSectionSize">
+        <number>19</number>
+       </attribute>
+       <attribute name="verticalHeaderDefaultSectionSize">
+        <number>25</number>
+       </attribute>
+      </widget>
+     </item>
+     <item>
+      <layout class="QVBoxLayout" name="verticalLayout_2">
+       <property name="rightMargin">
+        <number>0</number>
+       </property>
+       <item>
+        <widget class="QPushButton" name="addrange_btn">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="text">
+          <string>Add</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="delrange_btn">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="text">
+          <string>Del</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <layout class="QVBoxLayout" name="moreOptionsLayout">
+     <property name="topMargin">
+      <number>0</number>
+     </property>
+     <item>
+      <widget class="QGroupBox" name="moreOptionsGroupBox">
+       <property name="minimumSize">
+        <size>
+         <width>0</width>
+         <height>100</height>
+        </size>
+       </property>
+       <property name="title">
+        <string>MoreOptions</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <widget class="QLabel" name="varname_label">
+       <property name="text">
+        <string>FitVarName</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QSlider" name="var_slider">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="varval_label">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>20</width>
+         <height>0</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>0</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>range_tbl</sender>
+   <signal>itemSelectionChanged()</signal>
+   <receiver>FitCommon</receiver>
+   <slot>UpdateUIValues()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>89</x>
+     <y>172</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>4</x>
+     <y>221</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>addrange_btn</sender>
+   <signal>clicked()</signal>
+   <receiver>FitCommon</receiver>
+   <slot>AddRange()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>330</x>
+     <y>87</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>351</x>
+     <y>51</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>delrange_btn</sender>
+   <signal>clicked()</signal>
+   <receiver>FitCommon</receiver>
+   <slot>DelRange()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>351</x>
+     <y>177</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>355</x>
+     <y>216</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>var_slider</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>FitCommon</receiver>
+   <slot>VarSliderValChanged(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>122</x>
+     <y>407</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>126</x>
+     <y>426</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>range_tbl</sender>
+   <signal>cellChanged(int,int)</signal>
+   <receiver>FitCommon</receiver>
+   <slot>CellValueChanged(int,int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>111</x>
+     <y>119</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>-3</x>
+     <y>76</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>var_slider</sender>
+   <signal>sliderReleased()</signal>
+   <receiver>FitCommon</receiver>
+   <slot>VarSliderReleased()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>103</x>
+     <y>416</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>82</x>
+     <y>432</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>Test()</slot>
+  <slot>UpdateUIValues()</slot>
+  <slot>AddRange()</slot>
+  <slot>DelRange()</slot>
+  <slot>VarSliderValChanged(int)</slot>
+  <slot>CellValueChanged(int,int)</slot>
+  <slot>VarSliderReleased()</slot>
+ </slots>
+</ui>

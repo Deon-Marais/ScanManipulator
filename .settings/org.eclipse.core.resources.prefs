@@ -1,0 +1,17 @@
+eclipse.preferences.version=1
+encoding//Attenuation/Attenuation3DGUI.py=utf-8
+encoding//Attenuation/AttenuationGUI.py=utf-8
+encoding//Attenuation/PyGLWidget.py=utf-8
+encoding//Attenuation/PyGLWidget2.py=utf-8
+encoding//Fit/EntryCurveOptionsGUI.py=utf-8
+encoding//Fit/FitCommonGUI.py=utf-8
+encoding//Fit/PeakGUI.py=utf-8
+encoding//Manipulate/ManipulateGUI.py=utf-8
+encoding//Output/ExcelGUI.py=utf-8
+encoding//Output/FiguresGUI.py=utf-8
+encoding//Output/Intensity_mapGUI.py=utf-8
+encoding//Output/SicsGUI.py=utf-8
+encoding//Source/ScanmanPeakFit_pkfGUI.py=utf-8
+encoding//thirdparty/matplotlibwidget.py=utf-8
+encoding/DatasetsAppliedGUI.py=utf-8
+encoding/ScanmanGUI.py=utf-8

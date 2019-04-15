@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Histmem</class>
+ <widget class="QGroupBox" name="Histmem">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>318</width>
+    <height>141</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="windowTitle">
+   <string>Histmem</string>
+  </property>
+  <property name="title">
+   <string>ANSTO Histogram Memory</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout_3">
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout_3" stretch="0,0,0">
+     <item>
+      <widget class="QLabel" name="label">
+       <property name="text">
+        <string>Server</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLineEdit" name="servername_edit">
+       <property name="enabled">
+        <bool>true</bool>
+       </property>
+       <property name="text">
+        <string>http://10.0.1.21</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+       </property>
+       <property name="readOnly">
+        <bool>false</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="read_button">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="text">
+        <string>Read</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout_2">
+     <item>
+      <widget class="QCheckBox" name="autoread_check">
+       <property name="text">
+        <string>Autoread every</string>
+       </property>
+       <property name="checked">
+        <bool>false</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLineEdit" name="autoreadtime_edit">
+       <property name="text">
+        <string>2</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="label_2">
+       <property name="text">
+        <string>seconds</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>read_button</sender>
+   <signal>clicked()</signal>
+   <receiver>Histmem</receiver>
+   <slot>ReadServer()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>274</x>
+     <y>45</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>289</x>
+     <y>20</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>autoread_check</sender>
+   <signal>clicked(bool)</signal>
+   <receiver>Histmem</receiver>
+   <slot>ARSelected(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>56</x>
+     <y>97</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>81</x>
+     <y>75</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>servername_edit</sender>
+   <signal>returnPressed()</signal>
+   <receiver>Histmem</receiver>
+   <slot>ServerChanged()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>132</x>
+     <y>48</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>189</x>
+     <y>17</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>ReadServer()</slot>
+  <slot>ARSelected(bool)</slot>
+  <slot>ServerChanged()</slot>
+ </slots>
+</ui>

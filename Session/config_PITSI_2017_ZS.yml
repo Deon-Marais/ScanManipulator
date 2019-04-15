@@ -1,0 +1,26 @@
+instrument : PITSI
+
+source:
+  detector:
+    det_xmin: -330.0
+    det_xmax: 330.0
+    det_ymin: -187.5
+    det_ymax: 187.5
+    sam_to_det: 1720.62
+    stth: 90.0
+    lambda: 1.771
+  histmem:
+    IP: http://10.0.2.21
+    flipxy: True
+  hdf:
+    flipxy: false
+    
+flatfield_cor:
+  # Flat field correction
+  file: "./Session/PDI0002308.nx.hdf"
+  mode: 2th    
+    
+geom_cor:
+  # The channel fractions are used when performing geometric correction. eg. if 0.5 then 819 channels will be rebinned to 410
+  hfrac: 0.5
+  vfrac: 1

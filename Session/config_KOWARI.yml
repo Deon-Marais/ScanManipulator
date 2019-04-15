@@ -1,0 +1,27 @@
+instrument : KOWARI
+
+source:
+  detector:
+    det_xmin: -307.0
+    det_xmax: 307.0
+    det_ymin: -187.5
+    det_ymax: 187.5
+    sam_to_det: 1078.0
+    stth: 90.0
+    lambda: 1.76
+    
+flatfield_cor:
+  # Flat field correction
+  file: "./Session/KWR0039477_calibration.nx.hdf"
+  mode: 2th    
+    
+geom_cor:
+  # The channel fractions are used when performing geometric correction. eg. if 0.5 then 819 channels will be rebinned to 410
+  hfrac: 1
+  vfrac: 1
+  
+motor_corrections:
+  # Motor corrections are needed on KOWARI's tiny black eularian cradle. When echi is moved, ephi moves at a fraction of 0.4 without registering on the encoder
+  ephi_coupled_echi: -0.4
+  echi_offset: 90.0
+  echi_offset_sign: -1

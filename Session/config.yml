@@ -1,0 +1,26 @@
+instrument : MPISI
+
+source:
+  detector:
+    det_xmin: -140.0
+    det_xmax: 140.0
+    det_ymin: -140.0
+    det_ymax: 140.0
+    sam_to_det: 1148.5
+    stth: 90.0
+    lambda: 1.65932
+  histmem:
+    IP: http://10.0.1.21
+    flipxy: false
+  hdf:
+    flipxy: false 
+    
+flatfield_cor:
+  # Flat field correction
+  file: "./Session/RSI_efficiency_2016-04-05.hdf"
+  mode: 2th    
+    
+geom_cor:
+  # The channel fractions are used when performing geometric correction. eg. if 0.5 then 819 channels will be rebinned to 410
+  hfrac: 1
+  vfrac: 1
