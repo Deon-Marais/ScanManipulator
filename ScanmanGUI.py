@@ -882,4 +882,4 @@ class Ui_MainWindow(object):
         self.actionSave.setText(_translate("MainWindow", "Save", None))
         self.actionOpen.setText(_translate("MainWindow", "Open", None))
 
-from thirdparty.matplotlibwidget import MatplotlibWidget
+from matplotlibwidget import MatplotlibWidget

@@ -378,13 +378,28 @@ class AttenuationDEF(QGroupBox):
                     self.ui_vars[thisprm.name].SetVals(thisprm.c_val, thisprm.m_val, thisprm.x_str)
     
     #**************************************************************************************
+    def SelectPolyFile(self):
+        fname = self.filedialog.getOpenFileName(self, "Select polygon points file", self.lastdir,"Points (*.txt)")
+        if fname == "": return
+        self.lastdir = path.dirname(str(fname))
+        self.ui.polyPointFileEdit.setText(fname)
+
+    
+    #**************************************************************************************
     def SampleTypeChanged(self):
         if self.ui.cylRadioButton.isChecked() == True:
+            self.vars_samp_rect["s_len_x"].varname_label.setEnabled(True)
             self.vars_samp_rect["s_len_y"].varname_label.setEnabled(False)
             self.vars_samp_rect["s_len_x"].varname_label.setText("d")
         elif self.ui.rectRadioButton.isChecked() == True:
+            self.vars_samp_rect["s_len_x"].varname_label.setEnabled(True)
             self.vars_samp_rect["s_len_y"].varname_label.setEnabled(True)
-            self.vars_samp_rect["s_len_x"].varname_label.setText("s_len_x")            
+            self.vars_samp_rect["s_len_x"].varname_label.setText("s_len_x")
+        elif self.ui.polyRadioButton.isChecked() == True:    
+            self.vars_samp_rect["s_len_y"].varname_label.setEnabled(False)
+            self.vars_samp_rect["s_len_x"].varname_label.setEnabled(False)
+            
+       
 
     #**************************************************************************************
     def ClearDrawing(self):
@@ -500,6 +515,9 @@ class AttenuationDEF(QGroupBox):
             cylextpts = cylsample.exterior.xy
             sample_points = np.array(cylextpts).transpose()
             randomgrid = 1
+        elif self.ui.polyRadioButton.isChecked() == True:
+            sample_points = np.loadtxt(self.ui.polyPointFileEdit.text())
+            True
         sample_trans = mpl.transforms.Affine2D().rotate_deg_around(0.0, 0.0, omega)
         self.sample = plt.Polygon(sample_trans.transform(sample_points), alpha=0.3, color="black")
         sh_sample = shgeom.Polygon(self.sample.get_xy())        

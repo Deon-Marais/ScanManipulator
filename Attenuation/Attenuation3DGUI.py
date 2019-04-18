@@ -333,4 +333,4 @@ class Ui_Attenuation3D(object):
         self.colourScaleMax_edit.setText(_translate("Attenuation3D", "1.0", None))
         self.colourScaleAuto_check.setText(_translate("Attenuation3D", "Auto", None))
 
-from thirdparty.matplotlibwidget import MatplotlibWidget
+from matplotlibwidget import MatplotlibWidget

@@ -122,6 +122,16 @@ class Ui_Attenuation(object):
         self.cylRadioButton = QtGui.QRadioButton(self.instr_param_gbox)
         self.cylRadioButton.setObjectName(_fromUtf8("cylRadioButton"))
         self.horizontalLayout_2.addWidget(self.cylRadioButton)
+        self.polyRadioButton = QtGui.QRadioButton(self.instr_param_gbox)
+        self.polyRadioButton.setObjectName(_fromUtf8("polyRadioButton"))
+        self.horizontalLayout_2.addWidget(self.polyRadioButton)
+        self.polyPointFileEdit = QtGui.QLineEdit(self.instr_param_gbox)
+        self.polyPointFileEdit.setObjectName(_fromUtf8("polyPointFileEdit"))
+        self.horizontalLayout_2.addWidget(self.polyPointFileEdit)
+        self.polyPointFileOpenButton = QtGui.QPushButton(self.instr_param_gbox)
+        self.polyPointFileOpenButton.setMaximumSize(QtCore.QSize(20, 16777215))
+        self.polyPointFileOpenButton.setObjectName(_fromUtf8("polyPointFileOpenButton"))
+        self.horizontalLayout_2.addWidget(self.polyPointFileOpenButton)
         self.samp_param_layout.addLayout(self.horizontalLayout_2)
         self.verticalLayout_7.addLayout(self.samp_param_layout)
         self.graphs_gbox = QtGui.QGroupBox(self.splitter)
@@ -275,6 +285,8 @@ class Ui_Attenuation(object):
         QtCore.QObject.connect(self.cleardrawing_button, QtCore.SIGNAL(_fromUtf8("clicked()")), Attenuation.ClearDrawing)
         QtCore.QObject.connect(self.lock_axis_check, QtCore.SIGNAL(_fromUtf8("clicked()")), Attenuation.LockAxis_clicked)
         QtCore.QObject.connect(self.animate_button, QtCore.SIGNAL(_fromUtf8("clicked()")), Attenuation.Animate)
+        QtCore.QObject.connect(self.polyRadioButton, QtCore.SIGNAL(_fromUtf8("clicked()")), Attenuation.SampleTypeChanged)
+        QtCore.QObject.connect(self.polyPointFileOpenButton, QtCore.SIGNAL(_fromUtf8("clicked()")), Attenuation.SelectPolyFile)
         QtCore.QMetaObject.connectSlotsByName(Attenuation)
 
     def retranslateUi(self, Attenuation):
@@ -292,6 +304,8 @@ class Ui_Attenuation(object):
         self.label_5.setText(_translate("Attenuation", "to", None))
         self.rectRadioButton.setText(_translate("Attenuation", "Rectangular", None))
         self.cylRadioButton.setText(_translate("Attenuation", "Cylindrical", None))
+        self.polyRadioButton.setText(_translate("Attenuation", "Polygon", None))
+        self.polyPointFileOpenButton.setText(_translate("Attenuation", "...", None))
         self.lock_axis_check.setText(_translate("Attenuation", "Lock axes", None))
         self.drawonly_check.setText(_translate("Attenuation", "Draw only", None))
         self.autoclear_check.setText(_translate("Attenuation", "Autoclear", None))
@@ -314,4 +328,4 @@ class Ui_Attenuation(object):
         self.colourScaleMax_edit.setText(_translate("Attenuation", "1.0", None))
         self.colourScaleAuto_check.setText(_translate("Attenuation", "Auto", None))
 
-from thirdparty.matplotlibwidget import MatplotlibWidget
+from matplotlibwidget import MatplotlibWidget

@@ -305,4 +305,4 @@ class Ui_Figures(object):
         self.pushButton_2.setText(_translate("Figures", "Clear", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_4), _translate("Figures", "Waterfall", None))
 
-from thirdparty.matplotlibwidget import MatplotlibWidget
+from matplotlibwidget import MatplotlibWidget
